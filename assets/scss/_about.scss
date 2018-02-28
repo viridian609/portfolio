@@ -1,0 +1,187 @@
+.who {
+  &__wrap {
+    width: 48.333%;
+    @include mq(tb) {
+      width: 100%;
+      margin-top: 7.2rem;
+    }
+  }
+  &__name {
+    color: $main;
+    margin-bottom: 2.4rem;
+  }
+  &__jp {
+    font-size: 2.4rem;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    margin-bottom: 0.4rem;
+  }
+  &__en {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+    font-family: "futura_de";
+    line-height: 1.3;
+  }
+  &__text {
+    margin-bottom: 6.4rem;
+  }
+  &__image {
+    box-shadow: 0px 63px 154px -20px rgba(7, 33, 66, 0.5);
+  }
+}
+.passion {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq(tb) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+  &__item {
+    width: 29.75%;
+    @include mq(tb) {
+      width: 100%;
+      margin-top: 6.4rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  &__image {
+    width: 42.016%;
+    margin: 0 auto 2.4rem;
+    @include mq(tb) {
+      width: 24.429%;
+    }
+  }
+}
+.skill-set {
+  &__flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include mq(tb) {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+  &__list {
+    width: 47%;
+    @include mq(tb) {
+      width: 100%;
+      &:last-child {
+        margin-top: 7.2rem;
+      }
+    }
+  }
+  &__item {
+    margin-top: 6.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  &__icon {
+    width: 10.6382%;
+    align-self: center;
+  }
+  &__detail {
+    width: 85.1063%;
+  }
+  &__meta {
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__name {
+    display: flex;
+    align-items: flex-end;
+  }
+  &__year {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    color: $typoGray;
+    margin-left: 0.8rem;
+    letter-spacing: 0.2em;
+  }
+  &__ratio {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: $main;
+  }
+  &__bar {
+    width: 100%;
+    height: 1.4rem;
+    background: #fff;position: relative;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px 0 rgba(7, 33, 66, 0.15);
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      border-radius: 10px;
+    }
+    &.p90 {
+      &:after {
+        width: 90%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+      }
+    }
+    &.p80 {
+      &:after {
+        width: 80%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 50%, #ff4d5a);
+      }
+    }
+    &.p70 {
+      &:after {
+        width: 70%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 65%, #ff4d5a);
+      }
+    }
+    &.p60 {
+      &:after {
+        width: 60%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 75%, #ff4d5a);
+      }
+    }
+    &.p50 {
+      &:after {
+        width: 50%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 65%);
+      }
+    }
+    &.p40 {
+      &:after {
+        width: 40%;
+        background-image: linear-gradient(to right, #072142, #8c2b7a 65%);
+      }
+    }
+  }
+}
+.footer {
+  width: 100%;
+  padding: 14.4rem 0;
+  text-align: center;
+  background-image: linear-gradient(101deg, #072142, #8c2b7a 52%, #ff4d5a);
+  a {
+    display: block;
+    font-size: 2.8rem;
+    line-height: 1.5;
+    color: #fff;
+    letter-spacing: 0.2em;
+    transition: .3s;
+    &:first-child {
+      margin-bottom: 2.4rem;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

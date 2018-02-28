@@ -1,0 +1,144 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+body {
+line-height: 1;
+}
+ol, ul {
+list-style: none;
+}
+blockquote, q {
+quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/*　デザイン */
+@import 'variables';
+@font-face {
+font-family: "futura_m";
+    src: url(../font/Futura-Med.eot) format("eot"), url(../font/Futura-Med.woff) format("woff");
+}
+@font-face {
+font-family: "futura_r";
+    src: url(../font/Futura-Boo.eot) format("eot"), url(../font/Futura-Boo.woff) format("woff");
+}
+@font-face {
+font-family: "futura_b";
+    src: url(../font/Futura-Bol.eot) format("eot"), url(../font/Futura-Bol.woff) format("woff");
+}
+@font-face {
+font-family: "futura_de";
+    src: url(../font/Futura-Dem.eot) format("eot"), url(../font/Futura-Dem.woff) format("woff");
+}
+html {
+    font-size: 62.5%;
+    // font-size: 2.666vw;
+    // font-size: (100vw / 37.5);
+    // @include mq(sm) {
+    //   font-size: (100vw / 105.5);
+    // }
+    // @include mq(ss) {
+    //   font-size: 62.5%;
+    // }
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'futura_r','Helvetica Neue','Helvetica','Arial','Avenir','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+    font-size: 1.6rem;
+    text-size-adjust: 100%;
+    color: $typo;
+    overflow-x: hidden;
+}
+textarea {
+  font-family: 'futura_m','Helvetica Neue','Helvetica','Arial','Avenir','Hiragino Sans',游ゴシック体, 'Yu Gothic', YuGothic,'ヒラギノ角ゴシック','メイリオ', Meiryo,'ＭＳ Ｐゴシック','MS PGothic', sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2;
+}
+p {
+    line-height: 2;
+    word-wrap: break-word;
+    white-space: normal; 
+}
+li,dt,dd,th,td,pre {
+    line-height: 1.5;
+}
+li {
+    list-style-type: none;
+}
+table {
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    empty-cells: show;
+    font: 100%;
+    font-size: inherit;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+a{
+	color:$main;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.clearfix {
+    overflow: hidden;
+    zoom: 1;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    width: 100%;
+}
+@import 'components';
+@import 'header';
+@import 'index';
+@import 'works';
+@import 'about';

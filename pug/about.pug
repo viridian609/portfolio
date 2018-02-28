@@ -1,0 +1,171 @@
+doctype html
+html(lang="ja")
+  head
+    include _meta
+    title About Me | KUON YAGI PORTFOLIO
+  body
+    include _header
+    main#barba-wrapper
+      .barba-container(data-namespace="underlayer")
+        .page-top
+          a.back-arrow(href="./#about"): img(src="./assets/img/back.svg" alt="back") 
+          p.scrollDown SCROLLDOWN
+          .title
+            h2(slot="heading") About Me
+            .border.js-toRight
+              span
+              span
+            p I love Design, Technology,
+              br
+              |and Story.
+            a.btn(href="https://www.wantedly.com/users/48483598", target="_balnk") Scout
+          .image.image__about
+        section.wapper
+          .who.container
+            .text.text--top
+              p.heading-num 01
+              .text__wrap.text__wrap--top.content
+                h2.heading.heading--top WHO I AM
+                .who__wrap
+                  .who__name
+                    h3.who__jp 屋宜久遠
+                    p.who__en KUON YAGI
+                  p.who__text
+                    | 1992年、沖縄県生まれ。大学を卒業後、県内の制作会社でDTPオペレーターとして就職後、大手紳士服量販店を中心に十数社のコーポレートサイトの運用業務を担当しました。
+                    br
+                    | 2017年より、個人でもWebデザイナーとしての活動を開始し、写真撮影・デザイン・コーディングまでワンストップで対応しています。
+                  .who__image: img(src="./assets/img/portrait.jpg" alt="KUON YAGI")
+          .passion.container
+            .text
+              p.heading-num 02
+              .text__wrap.content
+                h2.heading PASSION
+            .content.content--mlarge
+              ul.passion__list
+                li.passion__item
+                  .passion__image: img(src="./assets/img/design-skills.svg" alt="design")
+                  h3.sub-title DESIGN
+                  p.passion__text
+                    | デザインとは「魔法の杖」の様なものだと考えています。サービスやプロダクトが問題を解決するための魔法だとするならば、それを使用者（ユーザー）が使いこなすための媒介となるのがデザインの役目ではないでしょうか。ユーザーにマッチした「魔法の杖」を創造できるように日々努力します。
+                li.passion__item
+                  .passion__image: img(src="./assets/img/tech.svg" alt="TECHNOLOGY")
+                  h3.sub-title TECHNOLOGY
+                  p.passion__text
+                    | “十分に発達した科学技術は、魔法と見分けがつかない”という言葉があるように、テクノロジーは世界と個人の人生を変える力を持っています。常に最新の技術のキャッチアップを行い、変化に対応できる人間でいたい。イノベーションを普及させるのはエンジニアとともにデザイナーの使命でもあると思っています。
+                li.passion__item
+                  .passion__image: img(src="./assets/img/book-open.svg" alt="STORY")
+                  h3.sub-title STORY
+                  p.passion__text
+                    | 小説・映画・漫画などストーリー性のあるコンテンツが大好きです。ストーリーは人々の注目を集め、物事をわかりやすく、覚えやすくすることができます。あらゆる物語のパターンを研究し、自分のアウトプットにもストーリー性を帯びさせることができれば大きなリターンがあると信じています。
+          .skill-set.container
+            .text
+              p.heading-num 03
+              .text__wrap.content
+                h2.heading SKILL SET
+            .content.content--mlarge.skill-set__flex
+                ul.skill-set__list
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/ai.svg" alt="Illustrator")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Illustrator
+                          p.skill-set__year 3YEARS
+                        p.small-title 90
+                          span.skill-set__ratio %
+                      .skill-set__bar.p90
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/sketch.svg" alt="Sketch")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Sketch
+                          p.skill-set__year 1YEARS
+                        p.small-title 80
+                          span.skill-set__ratio %
+                      .skill-set__bar.p80
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/abstract.svg" alt="Abstract")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Abstract
+                          p.skill-set__year HALF A YEAR
+                        p.small-title 80
+                          span.skill-set__ratio %
+                      .skill-set__bar.p80
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/ps.svg" alt="Photoshop")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Photoshop
+                          p.skill-set__year 3YEARS
+                        p.small-title 70
+                          span.skill-set__ratio %
+                      .skill-set__bar.p70
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/flinto.png" alt="Flinto for mac")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Flinto for mac
+                          p.skill-set__year 2MONTHS
+                        p.small-title 50
+                          span.skill-set__ratio %
+                      .skill-set__bar.p50
+                ul.skill-set__list
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/html.svg" alt="HTML/CSS")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title HTML/CSS
+                          p.skill-set__year 2YEARS
+                        p.small-title 90
+                          span.skill-set__ratio %
+                      .skill-set__bar.p90
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/wp.svg" alt="Wordpress")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Wordpress
+                          p.skill-set__year 1YEARS
+                        p.small-title 70
+                          span.skill-set__ratio %
+                      .skill-set__bar.p70
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/sass.svg" alt="Sass")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Sass
+                          p.skill-set__year 1YEARS
+                        p.small-title 70
+                          span.skill-set__ratio %
+                      .skill-set__bar.p70
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/js.svg" alt="Javascript")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Javascript
+                          p.skill-set__year 1YEARS
+                        p.small-title 60
+                          span.skill-set__ratio %
+                      .skill-set__bar.p60
+                  li.skill-set__item
+                    .skill-set__icon: img(src="./assets/img/vue.svg" alt="Vue.js")
+                    .skill-set__detail
+                      .skill-set__meta
+                        .skill-set__name
+                          h4.small-title Vue.js
+                          p.skill-set__year 3MONTHS
+                        p.small-title 40
+                          span.skill-set__ratio %
+                      .skill-set__bar.p40
+        footer.footer
+            a(href="mailto:kuon609@gmail.com") kuon609@gmail.com
+            a(href="https://www.wantedly.com/users/48483598", target="_balnk") Wantedly
+    include _script

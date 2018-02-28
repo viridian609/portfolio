@@ -1,0 +1,99 @@
+.meta {
+  padding-top: 7.2rem;
+  position: relative;
+  &__back {
+    width: 100%;
+    height: 70rem;
+    background: $base;
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include layer(back);
+    @include mq(tb) {
+      height: 54rem;
+    }
+  }
+  &__text-wrap {
+    padding: 0 8.58333% 0;
+  }
+  &__text {
+    display: flex;
+    margin-bottom: 7.2rem;
+    li {
+      margin-right: 6.4rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .small-title {
+      margin-bottom: 0.8rem;
+    }
+  }
+}
+.big-image {
+  width: 100%;
+  height: 116rem;
+  background: url(../img/Perspective.jpg) no-repeat center;
+  background-size: cover;
+  margin-top: 14.4rem;
+}
+.kamp {
+  background: $base;
+  padding-top: 20rem;
+  margin-top: 14.4rem;
+  ul {
+    width: 76.666%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    width: 47.5543%;
+  }
+}
+.btn-wrap {
+  text-align: center;
+}
+.back-btn {
+  display: inline-block;
+  font-size: 3.2rem;
+  color: $dark;
+  letter-spacing: 0.2em;
+  position: relative;
+  transition: 0.5s;
+  &:after {
+    content: "";
+    width: 64px;
+    height: 2px;
+    background: $dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -88px;
+    margin: auto;
+    transition: 0.5s;
+  }
+  &:before {
+    content: "";
+    width: 24px;
+    height: 1px;
+    background: $dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -88px;
+    margin: auto;
+    transition: 0.5s;
+  }
+  &:hover {
+    transform: translate3d(-24px, 0, 0);
+    &:after {
+      width: 80px;
+      left: -112px;
+    }
+    &:before {
+      left: -112px;
+      transform: rotate(-45deg) translate3d(2px, -8px, 0);
+    }
+  }
+}

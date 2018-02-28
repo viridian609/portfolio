@@ -1,0 +1,39 @@
+/*
+Colors
+*/
+// メインカラー
+$main:#072142;
+$dark: #020b16;
+// アクセントカラーx
+$accent:#ff4d5a;
+// ベースカラー
+$base:#f2f4f5;
+// 文字色
+$typo:#828c96;
+$typoGray: #c0c5ca;
+
+
+$m-breakpoints: (
+  'sp': 'screen and (max-width: 380px)',
+  'tb': 'screen and (max-width: 800px)',
+  'md': 'screen and (max-width: 1250px)',
+) !default;
+
+@mixin mq($m-breakpoint: md) {
+  @media #{map-get($m-breakpoints, $m-breakpoint)} {
+    @content;
+  }
+}
+
+$layers: (
+  moreBack: -200,
+  back: -100,
+  middle: 100,
+  front: 200,
+  float: 300,
+  fixed: 1000,
+) !default;
+
+@mixin layer($layer-name: middle) {
+  z-index :map-get($layers, #{$layer-name});
+}

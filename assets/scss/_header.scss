@@ -1,0 +1,135 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 40px 0;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  @include layer(fixed);
+  a {
+    color: #fff;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  .name {
+    font-size: 2.4rem;
+    letter-spacing: 0.1em;
+  }
+  .wrap {
+    display: flex;
+    position: relative;
+  }
+  .icons {
+    display: flex;
+    margin-right: 6.4rem;
+    a {
+      display: block;
+      margin-right: 3.2rem;
+      font-size: 2.4rem;
+      letter-spacing: 0.1em;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .menuIcon {
+    position: relative;
+    width: 50px;
+    height: 22px;
+    cursor: pointer;
+    &::after,
+    &::before {
+      content: "";
+      width: 100%;
+      height: 3px;
+      background: #fff;
+      position: absolute;
+      right: 0;
+      transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+    &::after {
+      top: 0;
+    }
+    &::before {
+      bottom: 0;
+    }
+    &.js-open {
+      &::after {
+        top: 45%;
+        transform: rotate(45deg);
+      }
+      &::before {
+        bottom: 45%;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .global-nav {
+    background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transform: translate3d(0, -100%, 0);
+    @include layer(back);
+    &.js-open {
+      transform: translate3d(0, 0, 0);
+      a {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    &__list {
+      text-align: center;
+      li {
+        margin-bottom: 7.2rem;
+        position: relative;
+        padding: 0 153px;
+        overflow: hidden;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+      a {
+        display: inline-block;
+        color: #fff;
+        font-size: 12rem;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        font-family: "futura_m";
+        font-weight: normal;
+        text-shadow: 0 10px 30px rgba(2, 11, 22, 0.2);
+        transform: translate3d(0, 100%, 0);
+        transition: 0.4s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s;
+        @include mq(tb) {
+          font-size: 7.6rem;
+        }
+        &::after {
+          content: "";
+          width: 0;
+          height: 10px;
+          background: #fff;
+          position: absolute;
+          left: 0;
+          top: 40%;
+          box-shadow: 0 10px 30px rgba(2, 11, 22, 0.2);
+          transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+        &:hover {
+          opacity: 1;
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

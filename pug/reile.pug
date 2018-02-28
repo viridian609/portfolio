@@ -1,0 +1,53 @@
+doctype html
+html(lang="ja")
+  head
+    include _meta
+    title Hair Space REILE | KUON YAGI PORTFOLIO
+  body
+    include _header
+    main#barba-wrapper
+      .barba-container(data-namespace="underlayer")
+        .page-top
+          a.back-arrow(href="./#reile"): img(src="./assets/img/back.svg" alt="back") 
+          p.scrollDown SCROLLDOWN
+          .title
+            h2(slot="heading") Hair Space<br>REILE
+            .border.js-toRight
+              span
+              span
+            p website
+            a.btn(href="https://mens-reile.com/", target="_balnk") Visit site
+          .image.image__reile
+        section.wapper
+          .meta
+            .meta__back
+            .content.meta__text-wrap
+              ul.meta__text
+                li
+                  p.small-title ROLE
+                  p UI design / Coding
+                li
+                  p.small-title DATE
+                  p OCT 2017
+                li
+                  p.small-title OVERVIEW
+                  p 沖縄県のメンズサロン Hair Space ReileのWebサイト構築を行いました。
+            .content: img(src="./assets/img/mockup.png", alt="Hair Space REILE")
+          .text
+            p.heading-num 01
+            .text__wrap
+              h2.heading CONCEPT
+              p.text__works 大学が近く学生が主なターゲットなので、よくある理髪店のような野暮ったい雰囲気ではなく、欧米感のあるスタイリッシュな雰囲気を心掛けました。キービジュアルには、普段使用している道具や整髪料を並べたものを撮影し、こだわり感や職人感も演出しつつも雑誌のような見栄えになるよう調整しました。メインカラーには店内の床の色を少し暗くしたものを使用し、店内と雰囲気の差異が無いように調整しています。
+          .big-image
+          .text
+            p.heading-num 02
+            .text__wrap
+              h2.heading DEVELOPMENT
+              p.text__works コーディングに関しては車輪の再発明はせず、シンプルなプラグインを活用しています。フェードインのスクロールアニメーションにはAOSを使用し、Instagramの投稿取得にはinstafeed.jsを使用しています。CMSにはWordpressを採用し、クライアントは主にスマートフォンを使用してブログ更新を行っています。
+          .kamp
+            ul
+              li: img(src="./assets/img/reile_top.jpg", alt="TOP")
+              li: img(src="./assets/img/reile_about.jpg", alt="ABOUT")
+          .content.content--mlarge.btn-wrap
+            a.back-btn(href="./#reile") BACK
+    include _script

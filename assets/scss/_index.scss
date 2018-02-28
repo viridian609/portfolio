@@ -1,0 +1,227 @@
+.background {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.sky-color {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: linear-gradient(
+    to bottom,
+    #072142,
+    #061c37,
+    #07182b,
+    #061220,
+    #020b16
+  );
+  @include layer(moreBack);
+}
+.fullpage {
+  // height: 100vh;
+  // width: 100%;
+  &__slide {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    color: #fff;
+  }
+}
+#fp-nav {
+  margin: 0;
+  transform: translate3d(0,-50%,0);
+  width: 40px;
+  left: 40px;
+  overflow: hidden;
+  @include mq(md) {
+    width: auto;
+    top: auto;
+    left: 50%;
+    bottom: 32px;
+    transform: translate3d(-50%, 0, 0);
+  }
+  ul {
+    @include mq(md) {
+      display: flex;
+      align-items: flex-end;
+    }
+    li {
+      height: 3px;
+      margin: 0 0 40px;
+      @include mq(md) {
+        height: auto;
+        margin: 0 20px;
+      }
+      a {
+      width: 24px;
+      height: 100%;
+      background: #fff;
+      transition: .3s;
+        span {
+          display: none;
+        }
+        @include mq(md) {
+          width: 3px;
+          height: 24px;
+        }
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+      .active {
+        width: 40px;
+        @include mq(md) {
+          width: 3px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+.moon {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 29.427%;
+  margin: auto;
+  height: 1385px;
+  width: 1385px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mq(tb) {
+    width: 100vw;
+    height: 100vw;
+    left: 23%;
+  }
+  &__text {
+    position: absolute;
+    left: -15.5963%;
+    font-size: 6.4rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 10px 15px rgba(2, 11, 22, 0.2);
+    color: $accent;
+    font-family: "futura_b";
+    @include layer(front);
+    @include mq(tb) {
+      font-size: 3.2rem;
+    }
+  }
+  &__img {
+    position: relative;
+    width: 39.350180505%;
+    display: flex;
+    align-items: center;
+  }
+}
+.cloud {
+  position: absolute;
+  &--front1 {
+    top: 20.55045%;
+    right: -49.357798%;
+    width: 88.44%;
+    @include layer(front);
+  }
+  &--front2 {
+    bottom: -18.53211%;
+    right: -28.6238532%;
+    width: 87.155%;
+    @include layer(front);
+  }
+  &--front3 {
+    bottom: -5.137614678%;
+    left: -49.357798%;
+    width: 87.155%;
+    @include layer(front);
+  }
+  &--back1 {
+    top: -22.38532%;
+    right: -7.706422%;
+    width: 69.724%;
+    @include layer(back);
+  }
+  &--back2 {
+    top: -5.504587%;
+    left: -38.715596%;
+    width: 87.155%;
+    @include layer(back);
+  }
+}
+.moonlight {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 29.427%;
+  margin: auto;
+  height: 1385px;
+  width: 1385px;
+  background: url(../img/moonlight.svg) no-repeat;
+  background-size: 100%;
+  @include layer(back);
+  @include mq(tb) {
+    width: 100vw;
+    height: 100vw;
+    left: 23%;
+  }
+}
+.image {
+  display: block;
+  position: relative;
+  width: 53.125%;
+  height: 74.81%;
+  margin: 0 8% 0 auto;
+  box-shadow: 0 80px 140px -40px rgba(0, 0, 0, 0.6);
+  @include mq(tb) {
+    margin-right: 40px;
+  }
+  &--works {
+    background: url(../img/reile.jpg) no-repeat center;
+    background-size: 150%;
+    @include mq(md) {
+      background-size: cover;
+    }
+  }
+  &--about {
+    background: url(../img/about.jpg) no-repeat center;
+    background-size: cover;
+  }
+  &--contact {
+    background: url(../img/contact.jpg) no-repeat center;
+    background-size: cover;
+  }
+  .page-num {
+    position: absolute;
+    overflow: hidden;
+    right: -7.5490%;
+    bottom: 12.3762%;
+    font-size: 15rem;
+    color: #fff;
+    font-family: "Abril Fatface";
+    @include mq(tb) {
+      font-size: 7.5rem;
+      right: -5%;
+    }
+    p {
+      line-height: 1.1;
+      text-shadow: 0 10px 30px rgba(2, 11, 22, .5);
+    }
+  }
+}
+.star {
+  width: 1300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 29.427%;
+  display: flex;
+  align-items: center;
+  @include layer(back);
+  @include mq(tb) {
+    width: 100vw;
+    left: 23%;
+  }
+}

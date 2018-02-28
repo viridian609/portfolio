@@ -1,0 +1,71 @@
+doctype html
+html(lang="ja")
+  head
+    include _meta
+    title KUON YAGI PORTFOLIO
+  body
+    include _header
+    main#barba-wrapper
+      .barba-container(data-namespace="top")
+        .fullpage#js-fullpage
+          .section
+            .fullpage__slide
+              .title
+                h1 KUON<br>YAGI
+                .border.js-toRight
+                  span
+                  span
+                p web designer /<br>markup engineer.
+              .moon
+                .moon__img
+                  p.moon__text.js-moon PORTFOLIO
+                  .cloud.cloud--front1.js-moon: img(src="./assets/img/cloud1.svg" alt="cloud")
+                  .cloud.cloud--back2.js-moon: img(src="./assets/img/b_cloud02.svg" alt="cloud")
+                  .cloud.cloud--front2.js-moon: img(src="./assets/img/cloud2.svg" alt="cloud")
+                  img.js-moon(src="./assets/img/moon.svg" alt="moon")
+                  .cloud.cloud--front3.js-moon: img(src="./assets/img/cloud3.svg" alt="cloud")
+                  .cloud.cloud--back1.js-moon: img(src="./assets/img/b_cloud01.svg" alt="cloud")
+          .section
+            .fullpage__slide
+              .title
+                h2.js-toRight Hair Space<br>REILE
+                .border.js-toRight
+                  span
+                  span
+                p website
+                a.btn(href="/reile.html") Show me more
+              a(href="/reile.html").image.image--works
+                .page-num: p 01
+          .section
+            .fullpage__slide
+              .title
+                h2 About Me
+                .border.js-toRight
+                  span
+                  span
+                p I love Design, Technology,
+                  br
+                  |and Story.
+                a.btn(href="./about.html") Show me more
+              a(href="./about.html").image.image--about
+                .page-num: p 02
+          .section
+            .fullpage__slide
+              .title
+                h2 Get In Touch
+                .border.js-toRight
+                  span
+                  span
+                ul
+                  li: a(href="mailto:kuon609@gmail.com") kuon609@gmail.com
+                  li: a(href="https://www.wantedly.com/users/48483598", target="_blank") Wantedly
+                  li
+                    a(href="") <i class="fab fa-instagram"></i>
+                    a(href="") <i class="fab fa-twitter"></i>
+              .image.image--contact
+                .page-num: p 03
+        p.scrollDown SCROLLDOWN
+        .moonlight
+        .star: img(src="./assets/img/star.svg")
+        .sky-color
+    include _script

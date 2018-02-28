@@ -1,0 +1,273 @@
+.title {
+  color: #fff;
+  position: absolute;
+  overflow: hidden;
+  top: 50%;
+  transform: translate3d(0,-50%,0);
+  @include layer(front);
+  margin-left: 11%;
+  @include mq(tb) {
+    margin-left: 40px;
+  }
+  h1,
+  h2 {
+    font-size: 12rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.6rem;
+    font-family: "futura_m";
+    font-weight: normal;
+    text-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+    @include mq(tb) {
+      font-size: 7.6rem;
+    }
+  }
+  .border {
+    margin-bottom: 3.2rem;
+    span {
+      display: block;
+      width: 88px;
+      height: 4px;
+      border-radius: 5px;
+      background: $accent;
+      &:first-child {
+        margin-bottom: 1.4rem;
+      }
+      @include mq(tb) {
+        width: 70px;
+      }
+      &:last-child {
+        transform: translate3d(61.36%, 0, 0);
+      }
+    }
+  }
+  p {
+    color: #fff;
+    font-size: 2.8rem;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+    @include mq(tb) {
+      font-size: 2.4rem;
+      line-height: 1.4;
+    }
+  }
+  li {
+    margin-bottom: 1.6rem;
+    &:last-child {
+      margin-bottom: 0;
+      a:last-child {
+        margin-left: 3.2rem;
+      }
+    }
+    a {
+      color: #fff;
+      font-size: 2.8rem;
+      line-height: 1.5;
+      letter-spacing: 0.1em;
+      transition: 0.3s;
+      @include mq(tb) {
+        font-size: 2.4rem;
+        line-height: 1.4;
+      }
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+.btn {
+  display: inline-block;
+  font-size: 1.8rem;
+  color: #fff;
+  background: $accent;
+  line-height: 1;
+  font-weight: bold;
+  padding: 18px 32px;
+  border-radius: 50px;
+  margin-top: 3.2rem;
+  transition: .3s;
+  letter-spacing: 0.1em;
+  @include mq(tb) {
+    font-size: 1.8rem;
+    padding: 13px 24px;
+    margin-top: 1.6rem;
+  }
+  &:hover {
+    transform: translate3d(0,-3px,0);
+    box-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+    opacity: 1;
+  }
+}
+.scrollDown {
+  position: fixed;
+  font-size: 1.4rem;
+  bottom: 80px;
+  left: 40px;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  color: #fff;
+  &::after {
+    content: "";
+    width: 2px;
+    height: 64px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom: -80px;
+  }
+}
+.content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  &--mlarge {
+    margin-top: 14.4rem;
+  }
+  @include mq(md) {
+    padding: 0 10%;
+  }
+}
+.heading {
+  font-size: 4rem;
+  color: $main;
+  letter-spacing: 0.2em;
+  font-family: "futura_m";
+  margin-right: 3.2rem;
+  padding-top: 1.2rem;
+  &--top {
+    padding-top: 0;
+  }
+  @include mq(tb) {
+    padding-top: 0;
+    margin-right: 0;
+  }
+}
+.heading-num {
+  font-size: 4rem;
+  color: $accent;
+  position: relative;
+  padding-left: 6.2rem;
+  padding-right: 3.2rem;
+  font-family: "Abril Fatface";
+  line-height: 1.1;
+  &::after {
+    content: "";
+    width: 4.8rem;
+    height: 2px;
+    background: $dark;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+}
+.sub-title {
+  font-size: 3.2rem;
+  margin-bottom: 1.6rem;
+  color: $main;
+  text-align: center;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  font-family: "futura_de";
+  word-break: break-all;
+}
+.small-title {
+  font-size: 2.4rem;
+  color: $main;
+  letter-spacing: 0.2em;
+  line-height: 1.2;
+  font-family: "futura_de";
+}
+.wapper {
+  margin-bottom: 20rem;
+}
+.back-arrow {
+  position: fixed;
+  top: 120px;
+  left: 40px;
+  display: block;
+  width: 64px;
+  transition: .5s;
+  @include layer(front);
+  &:hover {
+    transform: translate3d(-15%,0,0);
+  }
+}
+.page-top {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: $dark;
+  .image {
+    position: relative;
+    width: 60.677%;
+    height: 100vh;
+    margin: 0 0 0 auto;
+    box-shadow: none;
+    &__reile {
+      background: url(../img/reile.jpg) no-repeat center;
+      background-size: cover;  
+    }
+    &__about {
+      background: url(../img/about.jpg) no-repeat center;
+      background-size: cover;  
+    }
+  }
+}
+.text {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 138px;
+  margin-top: 14.4rem;
+  @include mq(tb) {
+    align-items: flex-start;
+    padding-left: 0;
+  }
+  &--top {
+    align-items: flex-start;
+  }
+  .heading-num {
+    position: absolute;
+    left: 0;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 10%;
+    box-sizing: content-box;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    &--top {
+      align-items: flex-start;
+      @include mq(tb) {
+        align-items: center;
+      }
+    }
+    @include mq(tb) {
+      flex-direction: column;
+      padding-left: 10%;
+    }
+  }
+  &__works {
+    width: 65.5%;
+    @include mq(tb) {
+      width: 100%;
+      margin-top: 7.2rem;
+    }
+  }
+}
+.container {
+  margin-top: 20rem;
+}
