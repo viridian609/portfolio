@@ -16,9 +16,10 @@ html(lang="ja")
               span
               span
             p website
-            a.btn(href="https://mens-reile.com/", target="_balnk") Visit site
+            .btn-wrap
+              a.btn(href="https://mens-reile.com/", target="_balnk") Visit site
           .image.image__reile
-        section.wapper
+        section.wrapper
           .meta
             .meta__back
             .content.meta__text-wrap
@@ -48,6 +49,6 @@ html(lang="ja")
             ul
               li: img(src="./assets/img/reile_top.jpg", alt="TOP")
               li: img(src="./assets/img/reile_about.jpg", alt="ABOUT")
-          .content.content--mlarge.btn-wrap
+          .content.content--mlarge.back-btn-wrap
             a.back-btn(href="./#reile") BACK
     include _script

@@ -84,18 +84,21 @@
   font-weight: bold;
   padding: 18px 32px;
   border-radius: 50px;
-  margin-top: 3.2rem;
   transition: .3s;
   letter-spacing: 0.1em;
   @include mq(tb) {
     font-size: 1.8rem;
     padding: 13px 24px;
-    margin-top: 1.6rem;
   }
   &:hover {
-    transform: translate3d(0,-3px,0);
-    box-shadow: 0 10px 30px rgba(2, 11, 22, 0.5);
+    transform: translate3d(0,-5%,0);
     opacity: 1;
+  }
+}
+.btn-wrap {
+  margin-top: 3.2rem;
+  @include mq(tb) {
+    margin-top: 1.6rem;
   }
 }
 .scrollDown {
@@ -184,8 +187,10 @@
   line-height: 1.2;
   font-family: "futura_de";
 }
-.wapper {
+.wrapper {
   margin-bottom: 20rem;
+  position: relative;
+  @include layer();
 }
 .back-arrow {
   position: fixed;
@@ -194,6 +199,7 @@
   display: block;
   width: 64px;
   transition: .5s;
+  overflow: hidden;
   @include layer(front);
   &:hover {
     transform: translate3d(-15%,0,0);

@@ -1,13 +1,18 @@
 // responsive config
 var $win = $(window);
-
+var fpnav = {};
 $win.on('load resize', function() {  
-  if (window.matchMedia('(max-width: 1250px)').matches) {
-    // SPの処理
-  } else if (window.matchMedia('(max-width: 800px)').matches) {
-    // TABの処理
+  fpnav = {
+    y: 0,
+    x: -100 + '%'
+  };
+  if (window.matchMedia('(max-width: 800px)').matches) {
+    fpnav = {
+      y: 100 + '%',
+      x: 0
+    };
   } else {
-    // PCの処理
+
   }
 });
 
@@ -20,7 +25,27 @@ function fullPage() {
     anchors: ['top', 'reile', 'about', 'contact'],
     navigation: true,
     navigationPosition: 'left',
-    animateAnchor: false
+    animateAnchor: false,
+    onLeave: function(index, nextIndex, direction) {
+      if(index == 1) {
+        var scrollBarHidden = anime({
+          targets: '.scrollDown',
+          translateY: 180 + '%',
+          duration: 500,
+          easing: 'easeInOutCubic',
+        });
+      }
+    },
+    afterLoad: function(anchorLink, index) {
+      if(index == 1) {
+        var scrollBarVisible = anime({
+          targets: '.scrollDown',
+          translateY: [180 + '%', 0],
+          duration: 500,
+          easing: 'easeInOutCubic',
+        });
+      }
+    }
   });
 }
 $(function() {
@@ -33,6 +58,7 @@ $(function menu(){
   });
 });
 
+console.log('aaa');
 // トランジションをページ別に分ける
 var topTransition = Barba.BaseView.extend({
   namespace: 'top',
@@ -43,6 +69,7 @@ var topTransition = Barba.BaseView.extend({
   },
   onEnterCompleted: function() {
       // このページのトランジションが完了した時。
+
   },
   onLeave: function() {
       // 次のページへのトランジションが始まった時。
@@ -61,40 +88,73 @@ var underLayer = Barba.BaseView.extend({
     Barba.Pjax.getTransition = function() {
       return PageTransitionUnder;
     };
+    
   },
   onEnterCompleted: function() {
+    var btnVisible = anime.timeline({
+      duration: 500,
+      easing: 'easeInOutCubic',
+    })
+    .add({
+      targets: '.btn-wrap',
+      translateY: [110 + '%', 0],
+    })
+    .add({
+      targets: '.back-arrow img',
+      translateX: [100 + '%', 0],
+      offset: '-=500'
+    })
+    .add({
+      targets: '.scrollDown',
+      translateY: [180 + '%', 0],
+      offset: '-=500'
+    });
   },
   onLeave: function() {
+    var btnHidden = anime.timeline({
+      duration: 500,
+      easing: 'easeInOutCubic',
+    })
+    .add({
+      targets: '.btn-wrap',
+      translateY: [0, 110 + '%'],
+    })
+    .add({
+      targets: '.back-arrow img',
+      translateX: [0, -100 + '%'],
+      offset: '-=500'
+    });
   },
   onLeaveCompleted: function() {
       // このページのcontainerが完全に削除された時。
-      // var indicatorVisible = anime.timeline({
-      //   duration: 500,
-      //   easing: 'easeInOutCubic'
-      // }).add({
-      //   targets: '.section',
-      //   background: 'none',
-      //   offset: '-=500'
-      // }).add({
-      //   targets: '.page-num p',
-      //   translateY: [100 + '%', 0],
-      //   translateZ: 0,
-      //   offset: '-=500'
-      // }).add({
-      //   targets: '#fp-nav ul',
-      //   translateY: [100 + '%', 0],
-      //   translateZ: 0,
-      //   offset: '-=500'
-      // });
-      // indicatorVisible.play();
-      var test = anime({
-        targets: '#fp-nav',
-        opacity: [0,1],
-        duration: 500,
-        delay: 1000
-      });
-      test.play();
       fullPage();
+      var visible = anime.timeline({
+        duration: 500,
+        easing: 'easeInOutCubic'
+      })
+      .add({
+        targets: '.page-num p',
+        translateY: [100 + '%', 0],
+        translateZ: 0,
+      })
+      .add({
+        targets: '#fp-nav ul',
+        translateY: [fpnav.y, 0],
+        translateX: [fpnav.x, 0],
+        translateZ: 0,
+        offset: '-=500'
+      })
+      .add({
+        targets: '.fullpage__slide',
+        background: ['#020b16', 'rgba(0,0,0,0)'],
+        offset: '-=500'
+      })
+      .add({
+        targets: '.active .btn-wrap',
+        translateY: [110 + '%', 0],
+        translateZ: 0,
+        offset: '-=500',
+      });
   }
 });
 underLayer.init();
@@ -102,15 +162,18 @@ underLayer.init();
 // transition
 var PageTransitionTop = Barba.BaseTransition.extend({
   start: function() {
-    this.open(500)
+    this.open()
       .then(this.newContainerLoading)
       .then(this.finish.bind(this));
   },
-  open: function(timer) {
+  open: function() {
     return new Promise( function (resolve) {
       var openAnime = anime.timeline({
         duration: 500,
-        easing: 'easeInOutCubic'
+        easing: 'easeInOutCubic',
+        complete: function() {
+          resolve();
+        }
       })
       .add({
         targets: '.active .image',
@@ -118,7 +181,7 @@ var PageTransitionTop = Barba.BaseTransition.extend({
         height: [74.81 + '%', 100 + 'vh'],
         marginRight: [8 + '%', 0],
       }).add({
-        targets: '.section',
+        targets: '.fullpage__slide',
         background: '#020b16',
         offset: '-=500'
       }).add({
@@ -128,15 +191,18 @@ var PageTransitionTop = Barba.BaseTransition.extend({
         offset: '-=500'
       }).add({
         targets: '#fp-nav ul',
-        translateY: [0,100 + '%'],
+        translateY: [0,fpnav.y],
+        translateX: [0,fpnav.x],
         translateZ: 0,
         offset: '-=500'
+      })
+      .add({
+        targets: '.active .btn-wrap',
+        translateY: [0, 110 + '%'],
+        translateZ: 0,
+        offset: '-=500',
       });
-      openAnime.play();
-      console.log('top');
-      setTimeout(function () {
-        resolve();
-      }, timer);
+      openAnime.play;
     });
   },
   finish: function() {
@@ -146,26 +212,33 @@ var PageTransitionTop = Barba.BaseTransition.extend({
   
 var PageTransitionUnder = Barba.BaseTransition.extend({
   start: function() {
-    this.close(500)
+    this.close()
       .then(this.newContainerLoading)
       .then(this.finish.bind(this));
   },
-  close: function(timer) {
+  close: function() {
     return new Promise( function (resolve) {
       var closeAnime = anime.timeline({
         duration: 500,
-        easing: 'easeInOutCubic'
+        easing: 'easeInOutCubic',
+        complete: function() {
+          resolve();
+        }
       }).add({
         targets: '.page-top .image',
         width: [60.677 + '%', 53.125 + '%'],
         height: [100 + 'vh', 74.81 + '%'],
         marginRight: [0, 8 + '%']
       });
-      closeAnime.play();
-      console.log('under');
-      setTimeout(function () {
-        resolve();
-      }, timer);
+      closeAnime.pause;
+      if($(window).scrollTop() !== 0) {
+        timer = 1000;
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500, 'swing', closeAnime.play);
+      } else {
+        closeAnime.play;
+      }
     });
   },
   finish: function() {
